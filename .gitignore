@@ -1,0 +1,38 @@
+# --- Java / Maven ---
+target/
+*.class
+*.jar
+*.war
+*.log
+.mvn/
+mvnw
+mvnw.cmd
+!.mvn/wrapper/maven-wrapper.jar
+
+# --- Spring Boot ---
+*.original
+application-local.properties
+application-local.yml
+
+# --- Node / React ---
+node_modules/
+dist/
+build/
+.next/
+coverage/
+*.local
+
+# --- Env / secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Editors / IDEs ---
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# --- OS ---
+.DS_Store
+Thumbs.db
