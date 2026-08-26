@@ -59,8 +59,7 @@ across the full stack and into applied AI.
 I'm documenting the whole build — the architecture decisions, the code, the
 things that break, and what I learn fixing them.
 
-- 💼 LinkedIn: [Follow the journey](https://www.linkedin.com/in/YOUR-HANDLE)
-- 🐦 X/Twitter: [@YOUR-HANDLE](https://twitter.com/YOUR-HANDLE)
+
 
 ---
 
