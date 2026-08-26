@@ -1,38 +1,33 @@
-# --- Java / Maven ---
+HELP.md
 target/
-*.class
-*.jar
-*.war
-*.log
-.mvn/
-mvnw
-mvnw.cmd
-!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# --- Spring Boot ---
-*.original
-application-local.properties
-application-local.yml
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# --- Node / React ---
-node_modules/
-dist/
-build/
-.next/
-coverage/
-*.local
-
-# --- Env / secrets ---
-.env
-.env.*
-!.env.example
-
-# --- Editors / IDEs ---
-.idea/
-.vscode/
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
-*.swp
+*.ipr
 
-# --- OS ---
-.DS_Store
-Thumbs.db
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
