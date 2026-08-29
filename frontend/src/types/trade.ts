@@ -20,3 +20,8 @@ export interface TradeStats {
   netProfitLoss: number;
   profitFactor: number;
 }
+export interface DailyPnl {
+  date: string;
+  profitLoss: number;
+  tradeCount: number;
+}

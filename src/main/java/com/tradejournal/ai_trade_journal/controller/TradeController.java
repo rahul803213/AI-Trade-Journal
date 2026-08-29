@@ -1,9 +1,9 @@
 package com.tradejournal.ai_trade_journal.controller;
 
 import com.tradejournal.ai_trade_journal.model.TradeStats;
-import com.tradejournal.ai_trade_journal.model.Trade;
-import com.tradejournal.ai_trade_journal.service.TradeService;
 import com.tradejournal.ai_trade_journal.service.PdfParserService;
+import com.tradejournal.ai_trade_journal.service.TradeService;
+import com.tradejournal.ai_trade_journal.model.Trade;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
+import com.tradejournal.ai_trade_journal.model.DailyPnl;
+import java.time.LocalDate;
+import java.util.Map;
 import java.util.List;
 
 @RestController
@@ -49,7 +51,10 @@ public class TradeController {
     public TradeStats getStats() {
         return tradeService.calculateStats();
     }
-    
+    @GetMapping("/daily-pnl")
+public Map<LocalDate, DailyPnl> getDailyPnl() {
+    return tradeService.getDailyPnl();
+}
 
   
 }

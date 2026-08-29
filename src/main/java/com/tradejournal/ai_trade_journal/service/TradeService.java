@@ -1,12 +1,18 @@
 package com.tradejournal.ai_trade_journal.service;
 
+import com.tradejournal.ai_trade_journal.model.DailyPnl;
 //import com.tradejournal.ai_trade_journal.model.TradeStats;
 import com.tradejournal.ai_trade_journal.model.Trade;
 import com.tradejournal.ai_trade_journal.model.TradeStats;
 import com.tradejournal.ai_trade_journal.repository.TradeRepository;
 import org.springframework.stereotype.Service;
-
+import java.time.LocalDate;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.List;
+
+
+
 
 @Service
 public class TradeService {
@@ -58,4 +64,21 @@ public class TradeService {
 
         return new TradeStats(totalTrades, winRate, netProfitLoss, profitFactor);
     }
+
+    public Map<LocalDate, DailyPnl> getDailyPnl() {
+    List<Trade> trades = tradeRepository.findAll();
+    Map<LocalDate, DailyPnl> daily = new TreeMap<>();
+
+    for (Trade t : trades) {
+        LocalDate day = t.getCloseTime().toLocalDate();
+        DailyPnl d = daily.getOrDefault(day, new DailyPnl(day, 0, 0));
+        d.setProfitLoss(d.getProfitLoss() + t.getProfitLoss());
+        d.setTradeCount(d.getTradeCount() + 1);
+        daily.put(day, d);
+    }
+    return daily;
 }
+    
+}
+
+
